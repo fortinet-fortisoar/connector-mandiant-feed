@@ -1,0 +1,124 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Mandiant Feed - 1.0.0",
+      "description": "Sample playbooks for \"Mandiant Feed\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/87abe049-bb26-43e6-9cbb-c8707cdd7dc1",
+      "uuid": "7c698bc3-48bf-481c-a033-970f14d2f719",
+      "id": 365,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1656073116.655371,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1656073116.655371,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Indicators",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves indicators from Mandiant Threat Intel based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656073121,
+          "collection": "/api/3/workflow_collections/7c698bc3-48bf-481c-a033-970f14d2f719",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6bd3da7b-744e-4b3d-8d1d-44c09999f131",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "c688ed92-4b4c-4686-9dd7-fcbaca545a1c",
+                "title": "Mandiant Threat Intelligence: Get Indicators",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "6bd3da7b-744e-4b3d-8d1d-44c09999f131"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Indicators",
+              "description": null,
+              "arguments": {
+                "name": "Mandiant Feed",
+                "config": "188f3d41-541a-4a9c-96c6-68d6a2dad81b",
+                "params": {
+                  "id": "",
+                  "length": 50,
+                  "status": "",
+                  "added_after": ""
+                },
+                "version": "1.0.0",
+                "connector": "mandiant-feed",
+                "operation": "get_indicators",
+                "operationTitle": "Get Indicators",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "158",
+              "left": "440",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "82e5c091-cdcf-456a-9661-6b50d3edf6d0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Indicators",
+              "targetStep": "/api/3/workflow_steps/82e5c091-cdcf-456a-9661-6b50d3edf6d0",
+              "sourceStep": "/api/3/workflow_steps/6bd3da7b-744e-4b3d-8d1d-44c09999f131",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e2070e71-dc9a-46cf-9d3e-17b1eb1fee8b"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "1f2db599-1089-4e08-85f0-c3b28c7ff27c",
+          "id": 3129,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1656073116.656879,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1656073116.656879,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "mandiant-feed"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "mandiant-feed"
+  ]
+}
