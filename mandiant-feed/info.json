@@ -1,0 +1,218 @@
+{
+  "name": "mandiant-feed",
+  "version": "1.0.0",
+  "label": "Mandiant Feed",
+  "category": "Threat Intelligence",
+  "description": "Mandiant Threat Intelligence provides automated access to indicators of compromise (IOCs) — IP addresses, domain names, URLs threat actors are using, via the indicators. <br></br> This connector has a dependency on the <a href=\"/content-hub/all-content/?contentType=solutionpack&amp;tag=ThreatIntelManagement\" target=\"_blank\" rel=\"noopener\">Threat Intel Management Solution Pack</a>. Install the Solution Pack before enabling ingestion of Threat Feeds from this source.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": false,
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
+        "value": "https://api.intelligence.fireeye.com"
+      },
+      {
+        "title": "Public Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "public_key",
+        "description": "Unique Public Key of the Mandiant Threat Intel that is used to create an authentication token required to access the Mandiant Threat Intel API."
+      },
+      {
+        "title": "Private Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "private_key",
+        "description": "Unique Private Key of the Mandiant Threat Intel that is used to create an authentication token required to access the Mandiant Threat Intel API."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_indicators",
+      "category": "investigation",
+      "annotation": "get_indicators",
+      "description": "Retrieves indicators from Mandiant Threat Intel based on the input parameters you have specified.",
+      "title": "Get Indicators",
+      "parameters": [
+        {
+          "title": "Created After",
+          "name": "added_after",
+          "description": "Created datetime from when you want to retrieve indicators from Mandiant Threat Intel.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Limit",
+          "name": "length",
+          "description": "Number of results that you want this operation to return per page, in the response. The maximum number of results per page is set items to 50.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Value should be between 1 to 1000.",
+          "value": 50
+        },
+        {
+          "title": "STIX UUID",
+          "name": "id",
+          "description": "STIX ID of the alert object based on which you want to retrieve indicators from Mandiant Threat Intel.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "description": "Filters on whether the indicator is in an active state or has been revoked.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "options": [
+            "Active",
+            "Revoked"
+          ]
+        }
+      ],
+      "output_schema": {
+        "spec_version": "",
+        "objects": [
+          {
+            "id": "",
+            "type": "",
+            "created": "",
+            "definition_type": "",
+            "definition": {
+              "tlp": ""
+            }
+          },
+          {
+            "external_references": [
+              {
+                "source_name": "",
+                "external_id": "",
+                "description": ""
+              }
+            ],
+            "object_marking_refs": [],
+            "id": "",
+            "name": "",
+            "type": "",
+            "created": "",
+            "modified": "",
+            "malware_types": [],
+            "is_family": "",
+            "labels": [],
+            "revoked": "",
+            "spec_version": ""
+          },
+          {
+            "object_marking_refs": [],
+            "id": "",
+            "name": "",
+            "type": "",
+            "created": "",
+            "modified": "",
+            "revoked": "",
+            "identity_class": "",
+            "lang": "",
+            "spec_version": ""
+          },
+          {
+            "id": "",
+            "type": "",
+            "created": "",
+            "definition_type": "",
+            "definition": {
+              "tlp": ""
+            }
+          },
+          {
+            "id": "",
+            "source_ref": "",
+            "target_ref": "",
+            "type": "",
+            "created": "",
+            "modified": "",
+            "revoked": "",
+            "relationship_type": "",
+            "spec_version": ""
+          },
+          {
+            "x_fireeye_com_metadata": {
+              "subscriptions": []
+            },
+            "indicator_types": [],
+            "pattern_type": "",
+            "object_marking_refs": [],
+            "id": "",
+            "type": "",
+            "created": "",
+            "modified": "",
+            "revoked": "",
+            "valid_from": "",
+            "confidence": "",
+            "pattern": "",
+            "labels": [],
+            "valid_until": "",
+            "spec_version": ""
+          },
+          {
+            "id": "",
+            "type": "",
+            "created": "",
+            "created_by_ref": "",
+            "definition_type": "",
+            "spec_version": "",
+            "definition": {
+              "statement": ""
+            }
+          },
+          {
+            "object_marking_refs": [],
+            "id": "",
+            "name": "",
+            "type": "",
+            "created": "",
+            "modified": "",
+            "identity_class": "",
+            "spec_version": ""
+          }
+        ],
+        "id": "",
+        "type": ""
+      },
+      "enabled": true
+    }
+  ]
+}
