@@ -7,7 +7,7 @@
   "publisher": "Community",
   "cs_approved": false,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/mandiant-feed/303/mandiant-feed-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": false,
@@ -30,7 +30,7 @@
         "visible": true,
         "type": "text",
         "name": "public_key",
-        "description": "Unique Public Key of the Mandiant Threat Intel that is used to create an authentication token required to access the Mandiant Threat Intel API."
+        "description": "The unique Mandiant Threat Intelligence Public Key used to create an authentication token required to access the Mandiant Threat Intelligence API."
       },
       {
         "title": "Private Key",
@@ -58,13 +58,13 @@
       "operation": "get_indicators",
       "category": "investigation",
       "annotation": "get_indicators",
-      "description": "Retrieves indicators from Mandiant Threat Intel based on the input parameters you have specified.",
+      "description": "Retrieves all indicators or specific indicators from Mandiant Feed based on the input parameters you have specified.",
       "title": "Get Indicators",
       "parameters": [
         {
           "title": "Created After",
           "name": "added_after",
-          "description": "Created datetime from when you want to retrieve indicators from Mandiant Threat Intel.",
+          "description": "Specify the Datetime using which you want to filter the indicators retrieved from Mandiant Feed to only include only those items that have been created after the specified Datetime.",
           "type": "datetime",
           "visible": true,
           "editable": true,
@@ -73,7 +73,7 @@
         {
           "title": "Limit",
           "name": "length",
-          "description": "Number of results that you want this operation to return per page, in the response. The maximum number of results per page is set items to 50.",
+          "description": "Specify the maximum number of results that you want this operation to return, per page, in the response. The maximum number of results per page is set to 50 items.",
           "type": "integer",
           "visible": true,
           "editable": true,
@@ -84,7 +84,7 @@
         {
           "title": "STIX UUID",
           "name": "id",
-          "description": "STIX ID of the alert object based on which you want to retrieve indicators from Mandiant Threat Intel.",
+          "description": "Specify the STIX ID of the alert object based on which you want to filter the indicators retrieved from Mandiant Feed",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -93,7 +93,7 @@
         {
           "title": "Status",
           "name": "status",
-          "description": "Filters on whether the indicator is in an active state or has been revoked.",
+          "description": "Select the status of the indicator based on which you want to filter the indicators retrieved from Mandiant Feed. You can choose between Active or Revoked.",
           "type": "select",
           "visible": true,
           "editable": true,
